@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, UserPlus } from "lucide-react";
+import { UserPlus } from "lucide-react";
 
 export default function RegisterPage() {
   return (
