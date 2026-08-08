@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, KeyRound } from "lucide-react";
+import { KeyRound } from "lucide-react";
 
 export default function LoginPage() {
   return (
@@ -56,7 +56,7 @@ export default function LoginPage() {
         </form>
 
         <div className="pt-4 border-t border-border/50 text-center text-xs text-muted-foreground">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/register" className="text-primary font-semibold hover:underline">
             Create an organization
           </Link>

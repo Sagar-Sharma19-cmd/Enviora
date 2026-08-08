@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, Key, Layers, Lock, Terminal, ArrowRight } from "lucide-react";
+import { Shield, Layers, Lock, Terminal, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
