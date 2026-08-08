@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    com.enviora: DEBUG
+    org.springframework.security: INFO

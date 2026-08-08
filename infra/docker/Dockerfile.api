@@ -1,0 +1,14 @@
+# Multi-stage Dockerfile for Spring Boot App (apps/api)
+FROM maven:3.9-eclipse-temurin-21-alpine AS build
+WORKDIR /app
+COPY apps/api/pom.xml ./apps/api/
+COPY apps/api/src ./apps/api/src
+RUN mvn -f apps/api/pom.xml clean package -DskipTests
+
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+RUN addgroup -S enviora && adduser -S enviora -G enviora
+USER enviora
+COPY --from=build /app/apps/api/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
