@@ -3,8 +3,15 @@ spring:
     activate:
       on-profile: dev
 
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:enviora_db}}
+    username: ${POSTGRES_USER:enviora_user}
+    password: ${POSTGRES_PASSWORD:enviora_dev_password_change_me}
+
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
 
 logging:
   level:

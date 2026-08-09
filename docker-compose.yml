@@ -37,6 +37,16 @@ services:
     networks:
       - enviora-network
 
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: enviora-mailpit
+    restart: unless-stopped
+    ports:
+      - "8025:8025" # Mailpit Web UI
+      - "1025:1025" # Mailpit SMTP Server
+    networks:
+      - enviora-network
+
 volumes:
   postgres_data:
     driver: local
